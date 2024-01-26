@@ -1,6 +1,6 @@
 # TaterFlow
 This is an implement of the TaterFlow,
-**“[TaterFlow: Task-driven Underwater Image Enhancement with Heuristic Normalizing Flow]”**, 
+**“TaterFlow: Task-driven Underwater Image Enhancement with Heuristic Normalizing Flow"**, 
 Zengxi Zhang, Zhiying Jiang, Long Ma, Jinyuan Liu, Xin Fan, Risheng Liu*, 2024, under review.
 
 ## Overview
