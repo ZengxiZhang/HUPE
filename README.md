@@ -21,9 +21,17 @@ To test the pre-trained models for Underwater Enhancement on example images, run
 cd code
 python test.py
 ```
-
-
-
+## Contact
+If you find our work useful in your research, please cite our conference version:
+```
+@inproceedings{zhang2023waterflow,
+	title={WaterFlow: Heuristic Normalizing Flow for Underwater Image Enhancement and Beyond},
+	author={Zhang, Zengxi and Jiang, Zhiying and Liu, Jinyuan and Fan, Xin and Liu, Risheng},
+	booktitle={Proceedings of the 31st ACM International Conference on Multimedia},
+	pages={7314--7323},
+	year={2023}
+}
+```
 ## Contact
 Should you have any question, please contact [Zengxi Zhang].
 
