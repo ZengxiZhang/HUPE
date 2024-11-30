@@ -16,7 +16,13 @@ code:
 - [Google Drive](https://drive.google.com/file/d/1OWHoVwqyi0DMOtrJrPGv_1EDIX26CnoL/view?usp=drive_link)
 
 ## Quick Run
-To test the pre-trained models for Underwater Enhancement on example images, run
+To test the pre-trained models for Underwater Enhancement on example images:
+
+### Step 1: Generated priors from with underwater images:
+
+run file 'IR_GDCP_forfolder.m' from root 'code/Generalization-of-the-Dark-Channel-Prior-for-Single-Image-Restoration-main/'
+
+### Step 2: Generated enhancement images:
 ```
 cd code
 python test.py
