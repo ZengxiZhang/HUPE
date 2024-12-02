@@ -1,7 +1,7 @@
 # HUPE
-This is an implement of the TaterFlow,
+This is an implementation of the paper,
 **“HUPE: Heuristic Underwater Perceptual Enhancement with Semantic Collaborative Learning"**, 
-Zengxi Zhang, Zhiying Jiang, Long Ma, Jinyuan Liu, Xin Fan, Risheng Liu*, 2024, under review.
+Zengxi Zhang, Zhiying Jiang, Long Ma, Jinyuan Liu, Xin Fan, Risheng Liu*, 2025, International Journal of Computer Vision.
 
 ## Overview
 ![avatar](Overview.png)
