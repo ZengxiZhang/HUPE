@@ -44,10 +44,12 @@ def main():
     parser.add_argument("--opt", default="./confs/TaterFlow_3b6f.yml")
     parser.add_argument("-n", "--name", default="unpaired")
     parser.add_argument("-model_path", default="../experiments/checkpoint.pth")
-    parser.add_argument("-data_root", default="../example")
+    # parser.add_argument("-data_root", default="../example")
+    parser.add_argument("-data_root", default="../example_try")
+    parser.add_argument("-resize_back", default=True)
+    parser.add_argument("-resize", default=512)
     args = parser.parse_args()
     model, opt = load_model(args.opt,args.model_path)
-    return_middle = True
     lr_paths = fiFindByWildcard(os.path.join(args.data_root,'input', '*.*'))
     depth_paths = fiFindByWildcard(os.path.join(args.data_root,'depth', '*.*'))
     grad_paths = fiFindByWildcard(os.path.join(args.data_root,'grad', '*.*'))
@@ -55,22 +57,27 @@ def main():
     test_rgb_dir = os.path.join(args.data_root, 'results')
     if not os.path.exists(test_rgb_dir):
         os.makedirs(test_rgb_dir)
-
     times = []
     for lr_path, depth_path, grad_path, t_path, idx_test in tqdm.tqdm(zip(lr_paths,depth_paths,grad_paths,t_paths, range(len(lr_paths)))):
         lr = imread(lr_path)
-        depth = cv2.cvtColor(imread(depth_path),cv2.COLOR_BGR2GRAY)[...,np.newaxis]
-        grad = cv2.cvtColor(imread(grad_path),cv2.COLOR_BGR2GRAY)[...,np.newaxis]
-        raw_shape = lr.shape
+        h,w,c = lr.shape
+        depth = cv2.cvtColor(imread(depth_path),cv2.COLOR_BGR2GRAY)#[...,np.newaxis]
+        grad = cv2.cvtColor(imread(grad_path),cv2.COLOR_BGR2GRAY)#[...,np.newaxis]
+        depth = cv2.resize(depth, (args.resize, args.resize))
+        grad = cv2.resize(grad, (args.resize, args.resize))
+        lr = cv2.resize(lr, (args.resize, args.resize))
+        grad = grad[...,np.newaxis]
+        depth = depth[...,np.newaxis]
         lr = t_tensor(lr)
         depth = t_tensor(depth)
         grad = t_tensor(grad)   
         inputs = torch.cat((lr, lr, grad, depth), 1).to(opt['gpu_ids'][0])
-        heat = opt['heat']
         with torch.cuda.amp.autocast():
             sr = model.get_sr(lq = inputs, heat=None)
         sr = rgb(torch.clamp(sr, 0, 1))
-        assert raw_shape == sr.shape
+        if args.resize_back:
+            sr = cv2.resize(sr,(w,h))
+
         path_out_enhance = os.path.join(test_rgb_dir, os.path.basename(lr_path))
         imwrite(path_out_enhance, sr)
 
