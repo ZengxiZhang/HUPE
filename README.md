@@ -28,8 +28,16 @@ cd code
 python test.py
 ```
 ## Contact
-If you find our work useful in your research, please cite our conference version:
+If you find our work useful in your research, please cite our journal or conference version:
 ```
+@article{zhang2025hupe,
+  title={HUPE: Heuristic Underwater Perceptual Enhancement with Semantic Collaborative Learning},
+  author={Zhang, Zengxi and Jiang, Zhiying and Ma, Long and Liu, Jinyuan and Fan, Xin and Liu, Risheng},
+  journal={International Journal of Computer Vision},
+  pages={1--19},
+  year={2025},
+  publisher={Springer}
+}
 @inproceedings{zhang2023waterflow,
 	title={WaterFlow: Heuristic Normalizing Flow for Underwater Image Enhancement and Beyond},
 	author={Zhang, Zengxi and Jiang, Zhiying and Liu, Jinyuan and Fan, Xin and Liu, Risheng},
