@@ -1,6 +1,6 @@
 # HUPE
 This is an implementation of the paper,
-**“HUPE: Heuristic Underwater Perceptual Enhancement with Semantic Collaborative Learning"**, 
+**“[HUPE: Heuristic Underwater Perceptual Enhancement with Semantic Collaborative Learning](https://link.springer.com/article/10.1007/s11263-024-02318-x)"**, 
 Zengxi Zhang, Zhiying Jiang, Long Ma, Jinyuan Liu, Xin Fan, Risheng Liu*, 2025, International Journal of Computer Vision.
 
 ## Overview
@@ -28,7 +28,7 @@ cd code
 python test.py
 ```
 ## Contact
-If you find our work useful in your research, please cite our journal or conference version:
+If you find our work useful in your research, please cite our paper:
 ```
 @article{zhang2025hupe,
   title={HUPE: Heuristic Underwater Perceptual Enhancement with Semantic Collaborative Learning},
@@ -38,13 +38,7 @@ If you find our work useful in your research, please cite our journal or confere
   year={2025},
   publisher={Springer}
 }
-@inproceedings{zhang2023waterflow,
-	title={WaterFlow: Heuristic Normalizing Flow for Underwater Image Enhancement and Beyond},
-	author={Zhang, Zengxi and Jiang, Zhiying and Liu, Jinyuan and Fan, Xin and Liu, Risheng},
-	booktitle={Proceedings of the 31st ACM International Conference on Multimedia},
-	pages={7314--7323},
-	year={2023}
-}
+
 ```
 ## Contact
 Should you have any question, please contact [Zengxi Zhang].
